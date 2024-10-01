@@ -9,6 +9,7 @@ from cinema.views import (
     MovieSessionViewSet,
 )
 
+
 router = routers.DefaultRouter()
 
 router.register("genres", GenreViewSet)
@@ -18,8 +19,7 @@ router.register("movies", MovieViewSet)
 router.register("movie_sessions", MovieSessionViewSet)
 
 
-urlpatterns = [
-    path("", include(router.urls))
-]
+urlpatterns = router.urls
+
 
 app_name = "cinema"
